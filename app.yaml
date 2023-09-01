@@ -1,0 +1,6 @@
+runtime: python39
+entrypoint: gunicorn -t 120 -b :$PORT main:app
+service: default
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  max_instances: 2
